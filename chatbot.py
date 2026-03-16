@@ -1,7 +1,6 @@
 import collections.abc
 import collections
 
-# Patch de compatibilite pour Python 3.10+ (indispensable pour Python 3.13)
 if not hasattr(collections, 'Hashable'):
     collections.Hashable = collections.abc.Hashable
 
@@ -63,6 +62,17 @@ def entrainer_sur_plantes():
     ]
     trainer.train(plantes_conversations)
 
+# Fonction d'entrainement sur les maths
+def entrainer_sur_maths():
+    trainer = ListTrainer(chazam_bot)
+    math_conversations = [
+        "Peux-tu calculer quelque chose pour moi ?",
+        "Bien sûr ! Posez-moi une question mathématique.",
+        "Que fait 10+10 ?",
+        "10+10 = 20"
+    ]
+    trainer.train(math_conversations)
+
 def demarrer_chat():
     print("Interface de chat activée. Tapez 'quitter' pour fermer.")
     while True:
@@ -82,6 +92,7 @@ if __name__ == "__main__":
     print("Entraînement du chatbot...")
     entrainer_base()
     entrainer_sur_plantes()
+    entrainer_sur_maths()
     print("Entraînement terminé.")
     
     demarrer_chat()
