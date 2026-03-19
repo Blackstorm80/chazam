@@ -1,3 +1,6 @@
 [submodule "libs/requests"]
 	path = libs/requests
 	url = https://github.com/psf/requests.git
+[submodule "vendor/corpus"]
+	path = vendor/corpus
+	url = https://github.com/gunthercox/chatterbot-corpus.git
